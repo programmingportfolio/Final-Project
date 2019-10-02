@@ -1,0 +1,5 @@
+C:\Users\lukep\Desktop\SoftwareStore\SoftwareStore\obj\Debug\netcoreapp2.2\SoftwareStore.csprojAssemblyReference.cache
+C:\Users\lukep\Desktop\SoftwareStore\SoftwareStore\obj\Debug\netcoreapp2.2\SoftwareStore.RazorAssemblyInfo.cache
+C:\Users\lukep\Desktop\SoftwareStore\SoftwareStore\obj\Debug\netcoreapp2.2\SoftwareStore.RazorAssemblyInfo.cs
+C:\Users\lukep\Desktop\SoftwareStore\SoftwareStore\obj\Debug\netcoreapp2.2\SoftwareStore.AssemblyInfoInputs.cache
+C:\Users\lukep\Desktop\SoftwareStore\SoftwareStore\obj\Debug\netcoreapp2.2\SoftwareStore.AssemblyInfo.cs

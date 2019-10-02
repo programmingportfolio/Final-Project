@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <UserSecretsId>aspnet-SoftwareStore-67673965-6E48-4432-B053-89D460D1664B</UserSecretsId>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+  </ItemGroup>
+
+</Project>
