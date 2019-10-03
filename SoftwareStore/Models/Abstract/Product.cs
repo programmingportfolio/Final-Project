@@ -9,7 +9,7 @@ namespace SoftwareStore.Models.Abstract
 {
     abstract class Product
     {
-        public <IdentityUser> UserName { get; set; }
+        //public <IdentityUser> UserName { get; set; }
         internal int managerId
         {
             get
@@ -74,10 +74,10 @@ namespace SoftwareStore.Models.Abstract
 
 
 
-        internal Product(int managerId, string productName, string productCategory, 
-            string shortDescription, decimal price, int quantity, string pictureUrl1, 
-            string longDescription = null, string videoUrl = null, string pictureUrl2 = null, 
-            string pictureUrl3 = null, string pictureUrl4 = null, string pictureUrl5 = null, 
+        internal Product(int managerId, string productName, string productCategory,
+            string shortDescription, decimal price, int quantity, string pictureUrl1,
+            string longDescription = null, string videoUrl = null, string pictureUrl2 = null,
+            string pictureUrl3 = null, string pictureUrl4 = null, string pictureUrl5 = null,
             string pictureUrl6 = null, string pictureUrl7 = null, string pictureUrl8 = null)
         {
 

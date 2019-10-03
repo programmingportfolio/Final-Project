@@ -24,6 +24,7 @@ namespace SoftwareStore.Models.Products
 
         }
 
+
         internal static bool IsSoftware(object comparison)
         {
             if (comparison is Software)
