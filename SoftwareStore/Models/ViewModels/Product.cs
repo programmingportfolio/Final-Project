@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace SoftwareStore.Models.ViewModels
 {
-    class Product : Abstract.Product
+    public class Product : Abstract.Product
     {
         public Product(int managerId, string productName, string productCategory,
             string shortDescription, decimal price, int quantity, string pictureUrl1,
