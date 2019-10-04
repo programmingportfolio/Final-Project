@@ -14,6 +14,8 @@ namespace SoftwareStore.Models
             context.Database.EnsureCreated();
 
             var existingSoftware = context.Softwares.ToList();
+            var newSoftware = new Software[0];
+            /*
             var newSoftware = new Software[]
            {
                         new  {Name =  "Luke",
@@ -21,6 +23,7 @@ namespace SoftwareStore.Models
                         }
 
            };
+           */
 
             // Look for existing matches
 
@@ -28,7 +31,7 @@ namespace SoftwareStore.Models
                        where !existingSoftware.Any(s => s.ProductName == software.ProductName)
                        select software;
 
-            List<Software> diffList = diff.Select(s => new Software { UserName = s.Name, Quotes = s.Quotes 
+           /* List<Software> diffList = diff.Select(s => new Software { UserName = s.Name, Quotes = s.Quotes 
             
             }).ToList();
             foreach (Software software in diffList)
@@ -37,6 +40,7 @@ namespace SoftwareStore.Models
             }
 
             context.SaveChanges();
+            */
         }
     }
 }
