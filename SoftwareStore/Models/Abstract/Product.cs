@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SoftwareStore.Models.Abstract
 {
-    abstract class Product
+    public abstract class Product
     {
         //public <IdentityUser> UserName { get; set; }
         internal int managerId
