@@ -1,7 +1,13 @@
-﻿@model Models.ViewModels.ProductListViewModel
+﻿
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Orders";
 }
+
+
+@{
+    ViewData["Title"] = "Order";
+}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,9 +43,39 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/fontawesome.css" integrity="sha384-ozJwkrqb90Oa3ZNb+yKFW2lToAWYdTiF1vt8JiH5ptTGHTGcN7qdoR1F95e0kYyG" crossorigin="anonymous">
 </head>
 <body>
-    <header class="header header-absolute">
+    <header class="header">
+        <!-- Top Bar-->
+        <div class="top-bar">
+            <div class="container-fluid">
+                <div class="row d-flex align-items-center">
+                    <div class="col-sm-7 d-none d-sm-block">
+                        <ul class="list-inline mb-0">
+                            <li class="list-inline-item pr-3 mr-0">
+                                <svg class="svg-icon mr-2">
+                                    <use xlink:href="#calls-1"> </use>
+                                </svg>020-800-456-747
+                            </li>
+                            <li class="list-inline-item px-3 border-left d-none d-lg-inline-block">Free shipping on orders over $300</li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-5 d-flex justify-content-end">
+                        <!-- Language Dropdown-->
+                        <div class="dropdown border-right px-3">
+                            <a id="langsDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle topbar-link"><img src="img/united-kingdom.svg" alt="english" class="topbar-flag">English</a>
+                            <div aria-labelledby="langsDropdown" class="dropdown-menu dropdown-menu-right"><a href="#" class="dropdown-item text-sm"><img src="img/germany.svg" alt="german" class="topbar-flag">German</a><a href="#" class="dropdown-item text-sm"> <img src="img/france.svg" alt="french" class="topbar-flag">French</a></div>
+                        </div>
+                        <!-- Currency Dropdown-->
+                        <div class="dropdown pl-3 ml-0">
+                            <a id="currencyDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle topbar-link">USD</a>
+                            <div aria-labelledby="currencyDropdown" class="dropdown-menu dropdown-menu-right"><a href="#" class="dropdown-item text-sm">EUR</a><a href="#" class="dropdown-item text-sm"> GBP</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Top Bar End-->
         <!-- Navbar-->
-        <nav class="navbar navbar-expand-lg bg-transparent navbar-light navbar-airy bg-hover-white bg-fixed-white navbar-hover-light navbar-fixed-light">
+        <nav class="navbar navbar-expand-lg navbar-sticky navbar-airy navbar-light bg-white bg-fixed-white">
             <div class="container-fluid">
                 <!-- Navbar Header  --><a href="index.html" class="navbar-brand">
                     <svg class="navbar-brand-svg" viewBox="0 0 65 16" width="85" height="20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -52,7 +88,7 @@
                 <div id="navbarCollapse" class="collapse navbar-collapse">
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item dropdown">
-                            <a id="homeDropdownMenuLink" href="index.html" data-target="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link active">
+                            <a id="homeDropdownMenuLink" href="index.html" data-target="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link ">
 
                                 Home<i class="fa fa-angle-down"></i>
                             </a>
@@ -252,13 +288,17 @@
                                 <use xlink:href="#search-1"> </use>
                             </svg>
                         </div>
-                        <!-- User Not Logged - link to login page-->
-                        <div class="nav-item">
-                            <a href="customer-login.html" class="navbar-icon-link">
+                        <!-- User Logged: Dropdown -->
+                        <div class="nav-item dropdown">
+                            <a id="userdetails" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle navbar-icon-link">
                                 <svg class="svg-icon">
                                     <use xlink:href="#male-user-1"> </use>
-                                </svg><span class="text-sm ml-2 ml-lg-0 text-uppercase text-sm font-weight-bold d-none d-sm-inline d-lg-none">Log in    </span>
+                                </svg>
                             </a>
+                            <div aria-labelledby="userdetails" class="dropdown-menu dropdown-menu-right">
+                                <a href="customer-orders.html" class="dropdown-item">Orders</a><a href="customer-addresses.html" class="dropdown-item">Addresses</a><a href="customer-account.html" class="dropdown-item">Profile</a>
+                                <div class="dropdown-divider my-0"></div><a href="#" class="dropdown-item">Logout                     </a>
+                            </div>
                         </div>
                         <!-- Cart Dropdown-->
                         <div class="nav-item dropdown">
@@ -342,47 +382,168 @@
         <!-- /Fullscreen search area-->
 
     </header>
-    <section data-parallax="scroll" data-image-src="img/photo/dmitriy-ilkevich-437760-unsplash-parallax.jpg" data-speed="0.5" data-position-x="left" data-bleed="20" class="h-100vh light-overlay light-overlay-lg-0 d-flex align-items-center text-dark text-center">
+    <!-- Hero Section-->
+    <section class="hero">
         <div class="container">
-            <div class="row">
-                <div class="col-12 py-5 overflow-hidden overlay-content mx-auto">
-                    <h5 class="text-uppercase text-dark font-weight-normal mb-4 letter-spacing-5"> Just arrived</h5>
-                    <h1 class="mb-5 display-2 font-weight-bold text-uppercase">Autumn vibes</h1>
-                    <p> <a href="category.html" class="btn btn-outline-dark">See look book</a></p>
+            <!-- Breadcrumbs -->
+            <ol class="breadcrumb justify-content-center">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="customer-orders.html">Orders</a></li>
+                <li class="breadcrumb-item active">Order #1735        </li>
+            </ol>
+            <!-- Hero Content-->
+            <div class="hero-content pb-5 text-center">
+                <h1 class="hero-heading">Order #1735</h1>
+                <div class="row">
+                    <div class="col-xl-8 offset-xl-2"><p class="lead text-muted">Order #1735 was placed on <strong>22/06/2013</strong> and is currently <strong>Being prepared</strong>.</p><p class="text-muted">If you have any questions, please feel free to <a href="contact.html">contact us</a>, our customer service center is working for you 24/7.</p></div>
                 </div>
             </div>
         </div>
     </section>
-    <section data-parallax="scroll" data-image-src="img/photo/serrah-galos-494279-unsplash-parallax.jpg" data-speed="0.5" data-position-x="right" data-bleed="20" class="h-100vh light-overlay light-overlay-lg-0 d-flex align-items-center text-left">
+    <section>
         <div class="container">
             <div class="row">
-                <div class="col-12 py-5 overflow-hidden overlay-content mx-auto">
-                    <h1 class="mb-3 display-1 font-weight-bold text-uppercase">Ethnic<br class="display-lg">sweaters</h1>
-                    <p class="h3 font-weight-normal mb-5">Trendy. Comfy. Beautiful. </p>
-                    <p> <a href="category.html" class="btn btn-dark">See look book</a></p>
+                <div class="col-lg-8 col-xl-9">
+                    <div class="cart">
+                        <div class="cart-wrapper">
+                            <div class="cart-header text-center">
+                                <div class="row">
+                                    <div class="col-6">Item</div>
+                                    <div class="col-2">Price</div>
+                                    <div class="col-2">Quantity</div>
+                                    <div class="col-2">Total</div>
+                                </div>
+                            </div>
+                            <div class="cart-body">
+                                <!-- Product-->
+                                <div class="cart-item">
+                                    <div class="row d-flex align-items-center text-center">
+                                        <div class="col-6">
+                                            <div class="d-flex align-items-center">
+                                                <a href="detail.html"><img src="img/product/product-square-ian-dooley-347968-unsplash.jpg" alt="..." class="cart-item-img"></a>
+                                                <div class="cart-title text-left">
+                                                    <a href="detail.html" class="text-uppercase text-dark"><strong>Skull Tee</strong></a><br><span class="text-muted text-sm">Size: Large</span><br><span class="text-muted text-sm">Colour: Green</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-2">$65.00</div>
+                                        <div class="col-2">
+                                            4
+                                        </div>
+                                        <div class="col-2 text-center">$260.00</div>
+                                    </div>
+                                </div>
+                                <!-- Product-->
+                                <div class="cart-item">
+                                    <div class="row d-flex align-items-center text-center">
+                                        <div class="col-6">
+                                            <div class="d-flex align-items-center">
+                                                <a href="detail.html"><img src="img/product/product-square-kyle-loftus-596319-unsplash.jpg" alt="..." class="cart-item-img"></a>
+                                                <div class="cart-title text-left">
+                                                    <a href="detail.html" class="text-uppercase text-dark"><strong>Transparent Blouse</strong></a><br><span class="text-muted text-sm">Size: Medium</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-2">$55.00</div>
+                                        <div class="col-2">
+                                            3
+                                        </div>
+                                        <div class="col-2 text-center">$165.00</div>
+                                    </div>
+                                </div>
+                                <!-- Product-->
+                                <div class="cart-item">
+                                    <div class="row d-flex align-items-center text-center">
+                                        <div class="col-6">
+                                            <div class="d-flex align-items-center">
+                                                <a href="detail.html"><img src="img/product/product-square-serrah-galos-494312-unsplash.jpg" alt="..." class="cart-item-img"></a>
+                                                <div class="cart-title text-left">
+                                                    <a href="detail.html" class="text-uppercase text-dark"><strong>White Tee</strong></a><br><span class="text-muted text-sm">Size: Medium</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-2">$55.00</div>
+                                        <div class="col-2">
+                                            3
+                                        </div>
+                                        <div class="col-2 text-center">$165.00</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row my-5">
+                        <div class="col-md-6">
+                            <div class="block mb-5">
+                                <div class="block-header">
+                                    <h6 class="text-uppercase mb-0">Order Summary</h6>
+                                </div>
+                                <div class="block-body bg-light pt-1">
+                                    <p class="text-sm">Shipping and additional costs are calculated based on values you have entered.</p>
+                                    <ul class="order-summary mb-0 list-unstyled">
+                                        <li class="order-summary-item"><span>Order Subtotal </span><span>$390.00</span></li>
+                                        <li class="order-summary-item"><span>Shipping and handling</span><span>$10.00</span></li>
+                                        <li class="order-summary-item"><span>Tax</span><span>$0.00</span></li>
+                                        <li class="order-summary-item border-0"><span>Total</span><strong class="order-summary-total">$400.00</strong></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="block-header">
+                                <h6 class="text-uppercase mb-0">Invoice address</h6>
+                            </div>
+                            <div class="block-body bg-light pt-1">
+                                <p>John Brown<br>13/25 New Avenue<br>New Heaven<br>45Y 73J<br>England<br><strong>Great Britain</strong></p>
+                            </div>
+                            <div class="block-header">
+                                <h6 class="text-uppercase mb-0">Shipping address</h6>
+                            </div>
+                            <div class="block-body bg-light pt-1">
+                                <p>John Brown<br>13/25 New Avenue<br>New Heaven<br>45Y 73J<br>England<br><strong>Great Britain</strong></p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </section>
-    <section data-parallax="scroll" data-image-src="img/photo/kyle-loftus-592041-unsplash-parallax.jpg" data-speed="0.5" data-position-x="left" data-bleed="20" class="h-100vh light-overlay light-overlay-lg-0 d-flex align-items-center text-dark text-left text-md-right">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 py-5 overflow-hidden overlay-content mx-auto">
-                    <h5 class="text-uppercase text-dark font-weight-normal mb-4 letter-spacing-5"> Our favourites</h5>
-                    <h1 class="mb-3 display-3 font-weight-bold text-uppercase">Shirts</h1>
-                    <p class="h3 font-weight-normal mb-5">Vestibulum tortor quam.<br>Feugiat vitae, ultricies eget. </p>
-                    <p> <a href="category.html" class="btn btn-outline-dark">See look book</a></p>
+                <!-- Customer Sidebar-->
+                <div class="col-xl-3 col-lg-4 mb-5">
+                    <div class="customer-sidebar card border-0">
+                        <div class="customer-profile">
+                            <a href="#" class="d-inline-block"><img src="img/photo/kyle-loftus-589739-unsplash-avatar.jpg" class="img-fluid rounded-circle customer-image"></a>
+                            <h5>Julie Svestkova</h5>
+                            <p class="text-muted text-sm mb-0">Ostrava, Czech republic</p>
+                        </div>
+                        <nav class="list-group customer-nav">
+                            <a href="customer-orders.html" class="active list-group-item d-flex justify-content-between align-items-center">
+                                <span>
+                                    <svg class="svg-icon svg-icon-heavy mr-2">
+                                        <use xlink:href="#paper-bag-1"> </use>
+                                    </svg>Orders
+                                </span>
+                                <div class="badge badge-pill badge-light font-weight-normal px-3">5</div>
+                            </a><a href="customer-account.html" class="list-group-item d-flex justify-content-between align-items-center">
+                                <span>
+                                    <svg class="svg-icon svg-icon-heavy mr-2">
+                                        <use xlink:href="#male-user-1"> </use>
+                                    </svg>Profile
+                                </span>
+                            </a><a href="customer-addresses.html" class="list-group-item d-flex justify-content-between align-items-center">
+                                <span>
+                                    <svg class="svg-icon svg-icon-heavy mr-2">
+                                        <use xlink:href="#navigation-map-1"> </use>
+                                    </svg>Addresses
+                                </span>
+                            </a><a href="customer-login.html" class="list-group-item d-flex justify-content-between align-items-center">
+                                <span>
+                                    <svg class="svg-icon svg-icon-heavy mr-2">
+                                        <use xlink:href="#exit-1"> </use>
+                                    </svg>Log out
+                                </span>
+                            </a>
+                        </nav>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </section>
-    <section data-parallax="scroll" data-image-src="img/photo/serrah-galos-494312-unsplash-parallax.jpg" data-speed="0.5" data-position-x="undefined" data-bleed="20" class="h-100vh light-overlay light-overlay-lg-0 d-flex align-items-center text-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 py-5 overflow-hidden overlay-content mx-auto">
-                    <h1 class="mb-5 display-3 font-weight-bold text-uppercase">Men's collection</h1>
-                    <p> <a href="category.html" class="btn btn-lg btn-dark">See look book</a></p>
-                </div>
+                <!-- /Customer Sidebar-->
             </div>
         </div>
     </section>
@@ -495,30 +656,28 @@
     <div id="scrollTop"><i class="fa fa-long-arrow-alt-up"></i></div>
     <!-- JavaScript files-->
     <script>
-        // ------------------------------------------------------- //
-        //   Inject SVG Sprite -
-        //   see more here
-        //   https://css-tricks.com/ajaxing-svg-sprite/
-        // ------------------------------------------------------ //
-        function injectSvgSprite(path) {
+// ------------------------------------------------------- //
+      //   Inject SVG Sprite -
+      //   see more here
+      //   https://css-tricks.com/ajaxing-svg-sprite/
+      // ------------------------------------------------------ //
+      function injectSvgSprite(path) {
 
-            var ajax = new XMLHttpRequest();
-            ajax.open("GET", path, true);
-            ajax.send();
-            ajax.onload = function (e) {
-                var div = document.createElement("div");
-                div.className = 'd-none';
-                div.innerHTML = ajax.responseText;
-                document.body.insertBefore(div, document.body.childNodes[0]);
-            }
-        }
-        // this is set to Bootstrapious website as you cannot
-        // inject local SVG sprite (using only 'icons/orion-svg-sprite.svg' path)
-        // while using file:// protocol
-        // pls don't forget to change to your domain :)
-        injectSvgSprite('https://demo.bootstrapious.com/sell/1-2-0/icons/orion-svg-sprite.svg');
-
-    </script>
+          var ajax = new XMLHttpRequest();
+          ajax.open("GET", path, true);
+          ajax.send();
+          ajax.onload = function(e) {
+          var div = document.createElement("div");
+          div.className = 'd-none';
+          div.innerHTML = ajax.responseText;
+          document.body.insertBefore(div, document.body.childNodes[0]);
+          }
+      }
+      // this is set to Bootstrapious website as you cannot
+      // inject local SVG sprite (using only 'icons/orion-svg-sprite.svg' path)
+      // while using file:// protocol
+      // pls don't forget to change to your domain :)
+      injectSvgSprite('https://demo.bootstrapious.com/sell/1-2-0/icons/orion-svg-sprite.svg');</script>
     <!-- jQuery-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <!-- Bootstrap JavaScript Bundle (Popper.js included)-->
@@ -534,11 +693,8 @@
     <script src="vendor/ekko-lightbox/ekko-lightbox.min.js"></script>
     <!-- Object Fit Images - Fallback for browsers that don't support object-fit-->
     <script src="vendor/object-fit-images/ofi.min.js"></script>
-    <script>
-        var basePath = ''
-
-    </script>
+    <script>var basePath = ''</script>
     <script src="js/theme.js"></script>
-    <script src="vendor/jquery-parallax.js/parallax.min.js"></script>
 </body>
 </html>
+

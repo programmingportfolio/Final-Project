@@ -1,7 +1,8 @@
-﻿@model Models.ViewModels.ProductListViewModel
+﻿
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Checkout3";
 }
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,9 +38,39 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/fontawesome.css" integrity="sha384-ozJwkrqb90Oa3ZNb+yKFW2lToAWYdTiF1vt8JiH5ptTGHTGcN7qdoR1F95e0kYyG" crossorigin="anonymous">
 </head>
 <body>
-    <header class="header header-absolute">
+    <header class="header">
+        <!-- Top Bar-->
+        <div class="top-bar">
+            <div class="container-fluid">
+                <div class="row d-flex align-items-center">
+                    <div class="col-sm-7 d-none d-sm-block">
+                        <ul class="list-inline mb-0">
+                            <li class="list-inline-item pr-3 mr-0">
+                                <svg class="svg-icon mr-2">
+                                    <use xlink:href="#calls-1"> </use>
+                                </svg>020-800-456-747
+                            </li>
+                            <li class="list-inline-item px-3 border-left d-none d-lg-inline-block">Free shipping on orders over $300</li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-5 d-flex justify-content-end">
+                        <!-- Language Dropdown-->
+                        <div class="dropdown border-right px-3">
+                            <a id="langsDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle topbar-link"><img src="img/united-kingdom.svg" alt="english" class="topbar-flag">English</a>
+                            <div aria-labelledby="langsDropdown" class="dropdown-menu dropdown-menu-right"><a href="#" class="dropdown-item text-sm"><img src="img/germany.svg" alt="german" class="topbar-flag">German</a><a href="#" class="dropdown-item text-sm"> <img src="img/france.svg" alt="french" class="topbar-flag">French</a></div>
+                        </div>
+                        <!-- Currency Dropdown-->
+                        <div class="dropdown pl-3 ml-0">
+                            <a id="currencyDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle topbar-link">USD</a>
+                            <div aria-labelledby="currencyDropdown" class="dropdown-menu dropdown-menu-right"><a href="#" class="dropdown-item text-sm">EUR</a><a href="#" class="dropdown-item text-sm"> GBP</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Top Bar End-->
         <!-- Navbar-->
-        <nav class="navbar navbar-expand-lg bg-transparent navbar-light navbar-airy bg-hover-white bg-fixed-white navbar-hover-light navbar-fixed-light">
+        <nav class="navbar navbar-expand-lg navbar-sticky navbar-airy navbar-light bg-white bg-fixed-white">
             <div class="container-fluid">
                 <!-- Navbar Header  --><a href="index.html" class="navbar-brand">
                     <svg class="navbar-brand-svg" viewBox="0 0 65 16" width="85" height="20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -52,7 +83,7 @@
                 <div id="navbarCollapse" class="collapse navbar-collapse">
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item dropdown">
-                            <a id="homeDropdownMenuLink" href="index.html" data-target="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link active">
+                            <a id="homeDropdownMenuLink" href="index.html" data-target="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link ">
 
                                 Home<i class="fa fa-angle-down"></i>
                             </a>
@@ -342,46 +373,104 @@
         <!-- /Fullscreen search area-->
 
     </header>
-    <section data-parallax="scroll" data-image-src="img/photo/dmitriy-ilkevich-437760-unsplash-parallax.jpg" data-speed="0.5" data-position-x="left" data-bleed="20" class="h-100vh light-overlay light-overlay-lg-0 d-flex align-items-center text-dark text-center">
+    <!-- Hero Section-->
+    <section class="hero">
         <div class="container">
-            <div class="row">
-                <div class="col-12 py-5 overflow-hidden overlay-content mx-auto">
-                    <h5 class="text-uppercase text-dark font-weight-normal mb-4 letter-spacing-5"> Just arrived</h5>
-                    <h1 class="mb-5 display-2 font-weight-bold text-uppercase">Autumn vibes</h1>
-                    <p> <a href="category.html" class="btn btn-outline-dark">See look book</a></p>
+            <!-- Breadcrumbs -->
+            <ol class="breadcrumb justify-content-center">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active">Checkout        </li>
+            </ol>
+            <!-- Hero Content-->
+            <div class="hero-content pb-5 text-center">
+                <h1 class="hero-heading">Checkout</h1>
+                <div class="row">
+                    <div class="col-xl-8 offset-xl-2"><p class="lead text-muted">Choose the payment method.</p></div>
                 </div>
             </div>
         </div>
     </section>
-    <section data-parallax="scroll" data-image-src="img/photo/serrah-galos-494279-unsplash-parallax.jpg" data-speed="0.5" data-position-x="right" data-bleed="20" class="h-100vh light-overlay light-overlay-lg-0 d-flex align-items-center text-left">
+    <!-- Checkout-->
+    <section>
         <div class="container">
             <div class="row">
-                <div class="col-12 py-5 overflow-hidden overlay-content mx-auto">
-                    <h1 class="mb-3 display-1 font-weight-bold text-uppercase">Ethnic<br class="display-lg">sweaters</h1>
-                    <p class="h3 font-weight-normal mb-5">Trendy. Comfy. Beautiful. </p>
-                    <p> <a href="category.html" class="btn btn-dark">See look book</a></p>
+                <div class="col-lg-8">
+                    <ul class="custom-nav nav nav-pills mb-5">
+                        <li class="nav-item w-25"><a href="checkout1.html" class="nav-link text-sm ">Address</a></li>
+                        <li class="nav-item w-25"><a href="checkout2.html" class="nav-link text-sm ">Delivery Method</a></li>
+                        <li class="nav-item w-25"><a href="checkout3.html" class="nav-link text-sm active">Payment Method </a></li>
+                        <li class="nav-item w-25"><a href="#" class="nav-link text-sm disabled">Order Review</a></li>
+                    </ul>
+                    <div class="mb-5">
+                        <div id="accordion" role="tablist">
+                            <div class="block mb-3">
+                                <div id="headingOne" role="tab" class="block-header"><strong><a data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne" class="accordion-link">Credit Card</a></strong></div>
+                                <div id="collapseOne" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" class="collapse show">
+                                    <div class="block-body">
+                                        <form action="#">
+                                            <div class="row">
+                                                <div class="form-group col-md-6">
+                                                    <label for="card-name" class="form-label">Name on Card</label>
+                                                    <input type="text" name="card-name" placeholder="Name on card" id="card-name" class="form-control">
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <label for="card-number" class="form-label">Card Number</label>
+                                                    <input type="text" name="card-number" placeholder="Card number" id="card-number" class="form-control">
+                                                </div>
+                                                <div class="form-group col-md-4">
+                                                    <label for="expiry-date" class="form-label">Expiry Date</label>
+                                                    <input type="text" name="expiry-date" placeholder="MM/YY" id="expiry-date" class="form-control">
+                                                </div>
+                                                <div class="form-group col-md-4">
+                                                    <label for="cvv" class="form-label">CVC/CVV</label>
+                                                    <input type="text" name="cvv" placeholder="123" id="cvv" class="form-control">
+                                                </div>
+                                                <div class="form-group col-md-4">
+                                                    <label for="zip" class="form-label">ZIP</label>
+                                                    <input type="text" name="zip" placeholder="123" id="zip" class="form-control">
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="block mb-3">
+                                <div id="headingTwo" role="tab" class="block-header"><strong><a data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" class="accordion-link collapsed">Paypal</a></strong></div>
+                                <div id="collapseTwo" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion" class="collapse">
+                                    <div class="block-body py-5 d-flex align-items-center">
+                                        <input type="radio" name="shippping" id="payment-method-1">
+                                        <label for="payment-method-1" class="ml-3"><strong class="d-block text-uppercase mb-2"> Pay with PayPal</strong><span class="text-muted text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit.                                          </span></label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="block mb-3">
+                                <div id="headingThree" role="tab" class="block-header"><strong><a data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree" class="accordion-link collapsed">Pay on delivery</a></strong></div>
+                                <div id="collapseThree" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion" class="collapse">
+                                    <div class="block-body py-5 d-flex align-items-center">
+                                        <input type="radio" name="shippping" id="payment-method-2">
+                                        <label for="payment-method-2" class="ml-3"><strong class="d-block text-uppercase mb-2"> Pay on delivery</strong><span class="text-muted text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit.    </span></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-5 d-flex justify-content-between flex-column flex-lg-row"><a href="checkout2.html" class="btn btn-link text-muted"> <i class="fa fa-angle-left mr-2"></i>Back to the delivery method</a><a href="checkout4.html" class="btn btn-dark">Continue to order review<i class="fa fa-angle-right ml-2"></i></a></div>
                 </div>
-            </div>
-        </div>
-    </section>
-    <section data-parallax="scroll" data-image-src="img/photo/kyle-loftus-592041-unsplash-parallax.jpg" data-speed="0.5" data-position-x="left" data-bleed="20" class="h-100vh light-overlay light-overlay-lg-0 d-flex align-items-center text-dark text-left text-md-right">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 py-5 overflow-hidden overlay-content mx-auto">
-                    <h5 class="text-uppercase text-dark font-weight-normal mb-4 letter-spacing-5"> Our favourites</h5>
-                    <h1 class="mb-3 display-3 font-weight-bold text-uppercase">Shirts</h1>
-                    <p class="h3 font-weight-normal mb-5">Vestibulum tortor quam.<br>Feugiat vitae, ultricies eget. </p>
-                    <p> <a href="category.html" class="btn btn-outline-dark">See look book</a></p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section data-parallax="scroll" data-image-src="img/photo/serrah-galos-494312-unsplash-parallax.jpg" data-speed="0.5" data-position-x="undefined" data-bleed="20" class="h-100vh light-overlay light-overlay-lg-0 d-flex align-items-center text-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 py-5 overflow-hidden overlay-content mx-auto">
-                    <h1 class="mb-5 display-3 font-weight-bold text-uppercase">Men's collection</h1>
-                    <p> <a href="category.html" class="btn btn-lg btn-dark">See look book</a></p>
+                <div class="col-lg-4">
+                    <div class="block mb-5">
+                        <div class="block-header">
+                            <h6 class="text-uppercase mb-0">Order Summary</h6>
+                        </div>
+                        <div class="block-body bg-light pt-1">
+                            <p class="text-sm">Shipping and additional costs are calculated based on values you have entered.</p>
+                            <ul class="order-summary mb-0 list-unstyled">
+                                <li class="order-summary-item"><span>Order Subtotal </span><span>$390.00</span></li>
+                                <li class="order-summary-item"><span>Shipping and handling</span><span>$10.00</span></li>
+                                <li class="order-summary-item"><span>Tax</span><span>$0.00</span></li>
+                                <li class="order-summary-item border-0"><span>Total</span><strong class="order-summary-total">$400.00</strong></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -494,31 +583,28 @@
     <!-- /Footer end-->
     <div id="scrollTop"><i class="fa fa-long-arrow-alt-up"></i></div>
     <!-- JavaScript files-->
-    <script>
-        // ------------------------------------------------------- //
-        //   Inject SVG Sprite -
-        //   see more here
-        //   https://css-tricks.com/ajaxing-svg-sprite/
-        // ------------------------------------------------------ //
-        function injectSvgSprite(path) {
+    <script>// ------------------------------------------------------- //
+      //   Inject SVG Sprite -
+      //   see more here
+      //   https://css-tricks.com/ajaxing-svg-sprite/
+      // ------------------------------------------------------ //
+      function injectSvgSprite(path) {
 
-            var ajax = new XMLHttpRequest();
-            ajax.open("GET", path, true);
-            ajax.send();
-            ajax.onload = function (e) {
-                var div = document.createElement("div");
-                div.className = 'd-none';
-                div.innerHTML = ajax.responseText;
-                document.body.insertBefore(div, document.body.childNodes[0]);
-            }
-        }
-        // this is set to Bootstrapious website as you cannot
-        // inject local SVG sprite (using only 'icons/orion-svg-sprite.svg' path)
-        // while using file:// protocol
-        // pls don't forget to change to your domain :)
-        injectSvgSprite('https://demo.bootstrapious.com/sell/1-2-0/icons/orion-svg-sprite.svg');
-
-    </script>
+          var ajax = new XMLHttpRequest();
+          ajax.open("GET", path, true);
+          ajax.send();
+          ajax.onload = function(e) {
+          var div = document.createElement("div");
+          div.className = 'd-none';
+          div.innerHTML = ajax.responseText;
+          document.body.insertBefore(div, document.body.childNodes[0]);
+          }
+      }
+      // this is set to Bootstrapious website as you cannot
+      // inject local SVG sprite (using only 'icons/orion-svg-sprite.svg' path)
+      // while using file:// protocol
+      // pls don't forget to change to your domain :)
+      injectSvgSprite('https://demo.bootstrapious.com/sell/1-2-0/icons/orion-svg-sprite.svg');</script>
     <!-- jQuery-->
     <script src="vendor/jquery/jquery.min.js"></script>
     <!-- Bootstrap JavaScript Bundle (Popper.js included)-->
@@ -534,11 +620,7 @@
     <script src="vendor/ekko-lightbox/ekko-lightbox.min.js"></script>
     <!-- Object Fit Images - Fallback for browsers that don't support object-fit-->
     <script src="vendor/object-fit-images/ofi.min.js"></script>
-    <script>
-        var basePath = ''
-
-    </script>
+    <script>var basePath = ''</script>
     <script src="js/theme.js"></script>
-    <script src="vendor/jquery-parallax.js/parallax.min.js"></script>
 </body>
 </html>

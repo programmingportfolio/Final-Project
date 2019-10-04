@@ -1,7 +1,13 @@
-﻿@model Models.ViewModels.ProductListViewModel
+﻿
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Checkout2";
 }
+
+
+@{
+    ViewData["Title"] = "Checkout1";
+}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,9 +43,39 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/fontawesome.css" integrity="sha384-ozJwkrqb90Oa3ZNb+yKFW2lToAWYdTiF1vt8JiH5ptTGHTGcN7qdoR1F95e0kYyG" crossorigin="anonymous">
 </head>
 <body>
-    <header class="header header-absolute">
+    <header class="header">
+        <!-- Top Bar-->
+        <div class="top-bar">
+            <div class="container-fluid">
+                <div class="row d-flex align-items-center">
+                    <div class="col-sm-7 d-none d-sm-block">
+                        <ul class="list-inline mb-0">
+                            <li class="list-inline-item pr-3 mr-0">
+                                <svg class="svg-icon mr-2">
+                                    <use xlink:href="#calls-1"> </use>
+                                </svg>020-800-456-747
+                            </li>
+                            <li class="list-inline-item px-3 border-left d-none d-lg-inline-block">Free shipping on orders over $300</li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-5 d-flex justify-content-end">
+                        <!-- Language Dropdown-->
+                        <div class="dropdown border-right px-3">
+                            <a id="langsDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle topbar-link"><img src="img/united-kingdom.svg" alt="english" class="topbar-flag">English</a>
+                            <div aria-labelledby="langsDropdown" class="dropdown-menu dropdown-menu-right"><a href="#" class="dropdown-item text-sm"><img src="img/germany.svg" alt="german" class="topbar-flag">German</a><a href="#" class="dropdown-item text-sm"> <img src="img/france.svg" alt="french" class="topbar-flag">French</a></div>
+                        </div>
+                        <!-- Currency Dropdown-->
+                        <div class="dropdown pl-3 ml-0">
+                            <a id="currencyDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle topbar-link">USD</a>
+                            <div aria-labelledby="currencyDropdown" class="dropdown-menu dropdown-menu-right"><a href="#" class="dropdown-item text-sm">EUR</a><a href="#" class="dropdown-item text-sm"> GBP</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Top Bar End-->
         <!-- Navbar-->
-        <nav class="navbar navbar-expand-lg bg-transparent navbar-light navbar-airy bg-hover-white bg-fixed-white navbar-hover-light navbar-fixed-light">
+        <nav class="navbar navbar-expand-lg navbar-sticky navbar-airy navbar-light bg-white bg-fixed-white">
             <div class="container-fluid">
                 <!-- Navbar Header  --><a href="index.html" class="navbar-brand">
                     <svg class="navbar-brand-svg" viewBox="0 0 65 16" width="85" height="20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -52,7 +88,7 @@
                 <div id="navbarCollapse" class="collapse navbar-collapse">
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item dropdown">
-                            <a id="homeDropdownMenuLink" href="index.html" data-target="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link active">
+                            <a id="homeDropdownMenuLink" href="index.html" data-target="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link ">
 
                                 Home<i class="fa fa-angle-down"></i>
                             </a>
@@ -342,46 +378,131 @@
         <!-- /Fullscreen search area-->
 
     </header>
-    <section data-parallax="scroll" data-image-src="img/photo/dmitriy-ilkevich-437760-unsplash-parallax.jpg" data-speed="0.5" data-position-x="left" data-bleed="20" class="h-100vh light-overlay light-overlay-lg-0 d-flex align-items-center text-dark text-center">
+    <!-- Hero Section-->
+    <section class="hero">
         <div class="container">
-            <div class="row">
-                <div class="col-12 py-5 overflow-hidden overlay-content mx-auto">
-                    <h5 class="text-uppercase text-dark font-weight-normal mb-4 letter-spacing-5"> Just arrived</h5>
-                    <h1 class="mb-5 display-2 font-weight-bold text-uppercase">Autumn vibes</h1>
-                    <p> <a href="category.html" class="btn btn-outline-dark">See look book</a></p>
+            <!-- Breadcrumbs -->
+            <ol class="breadcrumb justify-content-center">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active">Checkout        </li>
+            </ol>
+            <!-- Hero Content-->
+            <div class="hero-content pb-5 text-center">
+                <h1 class="hero-heading">Checkout</h1>
+                <div class="row">
+                    <div class="col-xl-8 offset-xl-2"><p class="lead text-muted">Please fill in your address.</p></div>
                 </div>
             </div>
         </div>
     </section>
-    <section data-parallax="scroll" data-image-src="img/photo/serrah-galos-494279-unsplash-parallax.jpg" data-speed="0.5" data-position-x="right" data-bleed="20" class="h-100vh light-overlay light-overlay-lg-0 d-flex align-items-center text-left">
+    <!-- Checkout-->
+    <section>
         <div class="container">
             <div class="row">
-                <div class="col-12 py-5 overflow-hidden overlay-content mx-auto">
-                    <h1 class="mb-3 display-1 font-weight-bold text-uppercase">Ethnic<br class="display-lg">sweaters</h1>
-                    <p class="h3 font-weight-normal mb-5">Trendy. Comfy. Beautiful. </p>
-                    <p> <a href="category.html" class="btn btn-dark">See look book</a></p>
+                <div class="col-lg-8">
+                    <ul class="custom-nav nav nav-pills mb-5">
+                        <li class="nav-item w-25"><a href="checkout1.html" class="nav-link text-sm active">Address</a></li>
+                        <li class="nav-item w-25"><a href="#" class="nav-link text-sm disabled">Delivery Method</a></li>
+                        <li class="nav-item w-25"><a href="#" class="nav-link text-sm disabled">Payment Method </a></li>
+                        <li class="nav-item w-25"><a href="#" class="nav-link text-sm disabled">Order Review</a></li>
+                    </ul>
+                    <form action="#">
+                        <div class="block">
+                            <!-- Invoice Address-->
+                            <div class="block-header">
+                                <h6 class="text-uppercase mb-0">Invoice address                    </h6>
+                            </div>
+                            <div class="block-body">
+                                <div class="row">
+                                    <div class="form-group col-md-6">
+                                        <label for="fullname_invoice" class="form-label">Full Name</label>
+                                        <input type="text" name="fullname_invoice" placeholder="Joe Black" id="fullname_invoice" class="form-control">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="emailaddress_invoice" class="form-label">Email Address</label>
+                                        <input type="text" name="emailaddress_invoice" placeholder="joe.black@gmail.com" id="emailaddress_invoice" class="form-control">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="street_invoice" class="form-label">Street</label>
+                                        <input type="text" name="street_invoice" placeholder="123 Main St." id="street_invoice" class="form-control">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="city_invoice" class="form-label">City</label>
+                                        <input type="text" name="city_invoice" placeholder="City" id="city_invoice" class="form-control">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="zip_invoice" class="form-label">ZIP</label>
+                                        <input type="text" name="zip_invoice" placeholder="Postal code" id="zip_invoice" class="form-control">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="state_invoice" class="form-label">State</label>
+                                        <input type="text" name="state_invoice" placeholder="State" id="state_invoice" class="form-control">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="phonenumber_invoice" class="form-label">Phone Number</label>
+                                        <input type="text" name="phonenumber_invoice" placeholder="Phone Number" id="phonenumber_invoice" class="form-control">
+                                    </div>
+                                    <div class="form-group col-12 mt-3">
+                                        <div class="custom-control custom-checkbox">
+                                            <input id="show-shipping-address" type="checkbox" name="clothes-brand" class="custom-control-input">
+                                            <label for="show-shipping-address" data-toggle="collapse" data-target="#shippingAddress" aria-expanded="false" aria-controls="shippingAddress" class="custom-control-label align-middle">Use a different shipping address</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /Invoice Address-->
+                            </div>
+                            <!-- Shippping Address-->
+                            <div id="shippingAddress" aria-expanded="false" class="collapse">
+                                <div class="block">
+                                    <div class="block-header">
+                                        <h6 class="text-uppercase mb-0">Shipping address </h6>
+                                    </div>
+                                    <div class="block-body">
+                                        <div class="row">
+                                            <div class="form-group col-md-6">
+                                                <label for="street_shipping" class="form-label">Street</label>
+                                                <input type="text" name="street_shipping" placeholder="123 Main St." id="street_shipping" class="form-control">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="city_shipping" class="form-label">City</label>
+                                                <input type="text" name="city_shipping" placeholder="City" id="city_shipping" class="form-control">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="zip_shipping" class="form-label">ZIP</label>
+                                                <input type="text" name="zip_shipping" placeholder="Postal code" id="zip_shipping" class="form-control">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="state_shipping" class="form-label">State</label>
+                                                <input type="text" name="state_shipping" placeholder="State" id="state_shipping" class="form-control">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="phonenumber_shipping" class="form-label">Phone Number</label>
+                                                <input type="text" name="phonenumber_shipping" placeholder="Phone Number" id="phonenumber_shipping" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /Shipping Address-->
+                            </div>
+                        </div>
+                        <div class="mb-5 d-flex justify-content-between flex-column flex-lg-row"><a href="cart.html" class="btn btn-link text-muted"> <i class="fa fa-angle-left mr-2"></i>Back </a><a href="checkout2.html" class="btn btn-dark">Choose delivery method<i class="fa fa-angle-right ml-2"></i></a></div>
+                    </form>
                 </div>
-            </div>
-        </div>
-    </section>
-    <section data-parallax="scroll" data-image-src="img/photo/kyle-loftus-592041-unsplash-parallax.jpg" data-speed="0.5" data-position-x="left" data-bleed="20" class="h-100vh light-overlay light-overlay-lg-0 d-flex align-items-center text-dark text-left text-md-right">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 py-5 overflow-hidden overlay-content mx-auto">
-                    <h5 class="text-uppercase text-dark font-weight-normal mb-4 letter-spacing-5"> Our favourites</h5>
-                    <h1 class="mb-3 display-3 font-weight-bold text-uppercase">Shirts</h1>
-                    <p class="h3 font-weight-normal mb-5">Vestibulum tortor quam.<br>Feugiat vitae, ultricies eget. </p>
-                    <p> <a href="category.html" class="btn btn-outline-dark">See look book</a></p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section data-parallax="scroll" data-image-src="img/photo/serrah-galos-494312-unsplash-parallax.jpg" data-speed="0.5" data-position-x="undefined" data-bleed="20" class="h-100vh light-overlay light-overlay-lg-0 d-flex align-items-center text-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 py-5 overflow-hidden overlay-content mx-auto">
-                    <h1 class="mb-5 display-3 font-weight-bold text-uppercase">Men's collection</h1>
-                    <p> <a href="category.html" class="btn btn-lg btn-dark">See look book</a></p>
+                <div class="col-lg-4">
+                    <div class="block mb-5">
+                        <div class="block-header">
+                            <h6 class="text-uppercase mb-0">Order Summary</h6>
+                        </div>
+                        <div class="block-body bg-light pt-1">
+                            <p class="text-sm">Shipping and additional costs are calculated based on values you have entered.</p>
+                            <ul class="order-summary mb-0 list-unstyled">
+                                <li class="order-summary-item"><span>Order Subtotal </span><span>$390.00</span></li>
+                                <li class="order-summary-item"><span>Shipping and handling</span><span>$10.00</span></li>
+                                <li class="order-summary-item"><span>Tax</span><span>$0.00</span></li>
+                                <li class="order-summary-item border-0"><span>Total</span><strong class="order-summary-total">$400.00</strong></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -539,6 +660,6 @@
 
     </script>
     <script src="js/theme.js"></script>
-    <script src="vendor/jquery-parallax.js/parallax.min.js"></script>
 </body>
 </html>
+
