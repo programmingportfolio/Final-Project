@@ -42,3 +42,4 @@ C:\Users\lukep\Desktop\SoftwareStore\SoftwareStore\obj\Debug\netcoreapp2.2\Razor
 C:\Users\lukep\Desktop\SoftwareStore\SoftwareStore\obj\Debug\netcoreapp2.2\Razor\Views\Home\Contact.cshtml.g.cs
 C:\Users\lukep\Desktop\SoftwareStore\SoftwareStore\obj\Debug\netcoreapp2.2\Razor\Views\Home\Category.cshtml.g.cs
 C:\Users\lukep\Desktop\SoftwareStore\SoftwareStore\obj\Debug\netcoreapp2.2\Razor\Views\Home\Product.cshtml.g.cs
+C:\Users\lukep\Desktop\SoftwareStore\SoftwareStore\obj\Debug\netcoreapp2.2\Razor\Views\Home\Products.cshtml.g.cs

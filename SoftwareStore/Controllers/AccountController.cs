@@ -7,40 +7,36 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace SoftwareStore.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class AccountController : ControllerBase
+    public class AccountController : Controller
     {
-        // GET: api/Account
-        [HttpGet]
-        public IEnumerable<string> Get()
+        public IActionResult Checkout1()
         {
-            return new string[] { "value1", "value2" };
+            return View();
+        }
+        public IActionResult Checkout2()
+        {
+            return View();
+        }
+        public IActionResult Checkout3()
+        {
+            return View();
+        }
+        public IActionResult Checkout4()
+        {
+            return View();
         }
 
-        // GET: api/Account/5
-        [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
+        public IActionResult Cart()
         {
-            return "value";
+            return View();
         }
-
-        // POST: api/Account
-        [HttpPost]
-        public void Post([FromBody] string value)
+        public IActionResult Order()
         {
+            return View();
         }
-
-        // PUT: api/Account/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public IActionResult Orders()
         {
-        }
-
-        // DELETE: api/ApiWithActions/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
+            return View();
         }
     }
 }

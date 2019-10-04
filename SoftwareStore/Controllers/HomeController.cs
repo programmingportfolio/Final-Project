@@ -34,27 +34,6 @@ namespace SoftwareStore.Controllers
         {
             return View();
         }
-        public IActionResult Checkout1()
-        {
-            return View();
-        }
-        public IActionResult Checkout2()
-        {
-            return View();
-        }
-        public IActionResult Checkout3()
-        {
-            return View();
-        }
-        public IActionResult Checkout4()
-        {
-            return View();
-        }
-
-        public IActionResult Cart()
-        {
-            return View();
-        }
 
         public IActionResult Product()
         {
@@ -64,14 +43,7 @@ namespace SoftwareStore.Controllers
         {
             return View();
         }
-        public IActionResult Order()
-        {
-            return View();
-        }
-        public IActionResult Orders()
-        {
-            return View();
-        }
+        
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
