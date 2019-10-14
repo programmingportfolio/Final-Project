@@ -5,11 +5,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using SoftwareStore.Models;
+using SoftwareStore.Models.ViewModels;
 
 namespace SoftwareStore.Controllers
 {
     public class HomeController : Controller
     {
+
+        //add db context
         public IActionResult Index()
         {
             return View();
@@ -35,9 +38,13 @@ namespace SoftwareStore.Controllers
             return View();
         }
 
-        public IActionResult Product()
+
+        //TODO: Complete show product
+        public IActionResult ShowProduct(Product product)
         {
-            return View();
+
+            //product linq lookup here.
+            return View(product);
         }
         public IActionResult Products()
         {

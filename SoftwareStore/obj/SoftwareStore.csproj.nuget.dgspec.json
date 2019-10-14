@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lukep\\Desktop\\SoftwareStore\\SoftwareStore\\SoftwareStore.csproj": {}
+    "C:\\Users\\lukep\\Desktop\\Final Project\\SoftwareStore\\SoftwareStore\\SoftwareStore.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lukep\\Desktop\\SoftwareStore\\SoftwareStore\\SoftwareStore.csproj": {
+    "C:\\Users\\lukep\\Desktop\\Final Project\\SoftwareStore\\SoftwareStore\\SoftwareStore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lukep\\Desktop\\SoftwareStore\\SoftwareStore\\SoftwareStore.csproj",
+        "projectUniqueName": "C:\\Users\\lukep\\Desktop\\Final Project\\SoftwareStore\\SoftwareStore\\SoftwareStore.csproj",
         "projectName": "SoftwareStore",
-        "projectPath": "C:\\Users\\lukep\\Desktop\\SoftwareStore\\SoftwareStore\\SoftwareStore.csproj",
+        "projectPath": "C:\\Users\\lukep\\Desktop\\Final Project\\SoftwareStore\\SoftwareStore\\SoftwareStore.csproj",
         "packagesPath": "C:\\Users\\lukep\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lukep\\Desktop\\SoftwareStore\\SoftwareStore\\obj\\",
+        "outputPath": "C:\\Users\\lukep\\Desktop\\Final Project\\SoftwareStore\\SoftwareStore\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",

@@ -14,6 +14,7 @@ namespace TimeTracker.Controllers
     {
         UserManager<IdentityUser> _userManager;
 
+
         public UsersController(UserManager<IdentityUser> userManager)
         {
             _userManager = userManager;
