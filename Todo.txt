@@ -1,3 +1,9 @@
-1. Create partial views for navbar or refactor navbar or replace values navbar
+1. Complete ui navbar navigation and change font for about page
 2. Create viewmodels for data display in pages
 3. Create viewmodel pagination
+4. Create page views based on product information from database
+5. Complete identity custom db set for integrating relationships with products
+6. Create view models and product models for dbcontext
+7. Dbcontext lookup for showproduct
+8. Add dummy data to application
+9. Copy paste new product page
