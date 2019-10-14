@@ -277,78 +277,7 @@
                         </li>
                     </ul>
                     <div class="d-flex align-items-center justify-content-between justify-content-lg-end mt-1 mb-2 my-lg-0">
-                        <!-- Search Button-->
-                        <div data-toggle="search" class="nav-item navbar-icon-link">
-                            <svg class="svg-icon">
-                                <use xlink:href="/#search-1"> </use>
-                            </svg>
-                        </div>
-                        <!-- User Logged: Dropdown -->
-                        <div class="nav-item dropdown">
-                            <a id="userdetails" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle navbar-icon-link">
-                                <svg class="svg-icon">
-                                    <use xlink:href="/#male-user-1"> </use>
-                                </svg>
-                            </a>
-                            <div aria-labelledby="userdetails" class="dropdown-menu dropdown-menu-right">
-                                <a href="/customer-orders.html" class="dropdown-item">Orders</a><a href="/customer-addresses.html" class="dropdown-item">Addresses</a><a href="/customer-account.html" class="dropdown-item">Profile</a>
-                                <div class="dropdown-divider my-0"></div><a href="/#" class="dropdown-item">Logout                     </a>
-                            </div>
-                        </div>
-                        <!-- Cart Dropdown-->
-                        <div class="nav-item dropdown">
-                            <a href="/cart.html" class="navbar-icon-link d-lg-none">
-                                <svg class="svg-icon">
-                                    <use xlink:href="/#cart-1"> </use>
-                                </svg><span class="text-sm ml-2 ml-lg-0 text-uppercase text-sm font-weight-bold d-none d-sm-inline d-lg-none">View cart</span>
-                            </a>
-                            <div class="d-none d-lg-block">
-                                <a id="cartdetails" href="/cart.html" data-target="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="navbar-icon-link dropdown-toggle">
-                                    <svg class="svg-icon">
-                                        <use xlink:href="/#cart-1"> </use>
-                                    </svg>
-                                    <div class="navbar-icon-link-badge">3                         </div>
-                                </a>
-                                <div aria-labelledby="cartdetails" class="dropdown-menu dropdown-menu-right p-4">
-                                    <div class="navbar-cart-product-wrapper">
-                                        <!-- cart item-->
-                                        <div class="navbar-cart-product">
-                                            <div class="d-flex align-items-center">
-                                                <a href="/detail.html"><img src="/img/product/product-square-ian-dooley-347968-unsplash.jpg" alt="..." class="img-fluid navbar-cart-product-image"></a>
-                                                <div class="w-100">
-                                                    <a href="/#" class="close text-sm mr-2"><i class="fa fa-times">                                                   </i></a>
-                                                    <div class="pl-3"> <a href="/detail.html" class="navbar-cart-product-link">Skull Tee</a><small class="d-block text-muted">Quantity: 1 </small><strong class="d-block text-sm">$75.00 </strong></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- cart item-->
-                                        <div class="navbar-cart-product">
-                                            <div class="d-flex align-items-center">
-                                                <a href="/detail.html"><img src="/img/product/product-square-kyle-loftus-596319-unsplash.jpg" alt="..." class="img-fluid navbar-cart-product-image"></a>
-                                                <div class="w-100">
-                                                    <a href="/#" class="close text-sm mr-2"><i class="fa fa-times">                                                   </i></a>
-                                                    <div class="pl-3"> <a href="/detail.html" class="navbar-cart-product-link">Transparent Blouse</a><small class="d-block text-muted">Quantity: 1 </small><strong class="d-block text-sm">$75.00 </strong></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- cart item-->
-                                        <div class="navbar-cart-product">
-                                            <div class="d-flex align-items-center">
-                                                <a href="/detail.html"><img src="/img/product/product-square-serrah-galos-494312-unsplash.jpg" alt="..." class="img-fluid navbar-cart-product-image"></a>
-                                                <div class="w-100">
-                                                    <a href="/#" class="close text-sm mr-2"><i class="fa fa-times">                                                   </i></a>
-                                                    <div class="pl-3"> <a href="/detail.html" class="navbar-cart-product-link">White Tee</a><small class="d-block text-muted">Quantity: 1 </small><strong class="d-block text-sm">$75.00 </strong></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- total price-->
-                                    <div class="navbar-cart-total"><span class="text-uppercase text-muted">Total</span><strong class="text-uppercase">$75.00</strong></div>
-                                    <!-- buttons-->
-                                    <div class="d-flex justify-content-between"><a href="/cart.html" class="btn btn-link text-dark mr-3">View Cart <i class="fa-arrow-right fa"></i></a><a href="/checkout1.html" class="btn btn-outline-dark">Checkout</a></div>
-                                </div>
-                            </div>
-                        </div>
+                        <partial name="_LoginPartial" />
                     </div>
                 </div>
             </div>
