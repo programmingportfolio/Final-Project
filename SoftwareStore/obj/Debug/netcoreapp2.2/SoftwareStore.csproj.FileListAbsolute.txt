@@ -88,3 +88,4 @@ C:\Users\lukep\Desktop\Final Project\SoftwareStore\SoftwareStore\obj\Debug\netco
 C:\Users\lukep\Desktop\Final Project\SoftwareStore\SoftwareStore\obj\Debug\netcoreapp2.2\SoftwareStore.dll
 C:\Users\lukep\Desktop\Final Project\SoftwareStore\SoftwareStore\obj\Debug\netcoreapp2.2\SoftwareStore.pdb
 C:\Users\lukep\Desktop\Final Project\SoftwareStore\SoftwareStore\obj\Debug\netcoreapp2.2\SoftwareStore.csproj.CopyComplete
+C:\Users\lukep\Desktop\Final Project\SoftwareStore\SoftwareStore\obj\Debug\netcoreapp2.2\Razor\Views\Manager\Create.cshtml.g.cs
