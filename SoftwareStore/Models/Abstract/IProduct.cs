@@ -13,7 +13,7 @@ namespace SoftwareStore.Models.Abstract
         string ProductCategory { get; set; }
         string ShortDescription { get; set; }
         string LongDescription { get; set; }
-        decimal Price { get; set; }
+        double Price { get; set; }
         int Quantity { get; set; }
         string EasyUrl { get; set; }
         string VideoUrl { get; set; }
@@ -27,20 +27,3 @@ namespace SoftwareStore.Models.Abstract
         string PictureUrl8 { get; set; }
     }
 }
-        /*
-        // List<string> pictureUrls = new List<string>();
-        // static int pictureCount { get; set; }
-        // bool hasPictures { get; set; }
-        bool hasVideo { get; set; }
-        // int productCount { get; set; }
-
-
-
-
-
-        string CreateEasyURL(string productCategory, string productName);
-
-        void OnChange();
-
-        string ToString();
-        */

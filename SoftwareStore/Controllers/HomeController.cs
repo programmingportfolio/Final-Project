@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using SoftwareStore.Models;
+using SoftwareStore.Models.Abstract;
 using SoftwareStore.Models.ViewModels;
 
 namespace SoftwareStore.Controllers
