@@ -14,11 +14,14 @@ namespace SoftwareStore.Models
             context.Database.EnsureCreated();
 
             var existingSoftware = context.Softwares.ToList();
-            
+
             var newSoftware = new Software[]
            {
                new Software
                {
+                                isSubscription = false,
+                                isDownload = false,
+                                isDownSub = true,
                                 UserName         = "Username",
                                 ProductName      = "Product Name",
                                 ProductCategory  = "Product Category",
@@ -48,6 +51,9 @@ namespace SoftwareStore.Models
 
            List<Software> diffList = diff.Select(s => new Software {
 
+               isSubscription = s.isSubscription,
+               isDownload = s.isDownload,
+               isDownSub = s.isDownSub,
                UserName = s.UserName,
                ProductName = s.ProductName,
                ProductCategory = s.ProductCategory,

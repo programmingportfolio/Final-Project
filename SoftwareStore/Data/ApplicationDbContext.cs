@@ -15,10 +15,11 @@ namespace SoftwareStore.Data
         {
         }
         public DbSet<Software> Softwares { get; set; }
+
     }
     public class Software : IProduct
     {
-        bool isDownload;
+        public bool isDownload;
         public bool isSubscription;
         public bool isDownSub;
         public string UserName { get; set; }

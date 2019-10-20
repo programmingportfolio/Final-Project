@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace SoftwareStore.Models.Abstract
 {
-    interface IProduct
+    public interface IProduct
     {
         string UserName { get; set; }
 

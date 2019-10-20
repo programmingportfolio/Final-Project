@@ -4,16 +4,24 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using SoftwareStore.Data;
+using SoftwareStore.Infrastructure;
 using SoftwareStore.Models;
 using SoftwareStore.Models.Abstract;
 using SoftwareStore.Models.ViewModels;
+using SoftwareStore.Models.ViewModels.Abstract;
+using SoftwareStore.Models.ViewModels.Concrete;
 
 namespace SoftwareStore.Controllers
 {
     public class HomeController : Controller
     {
+        ApplicationDbContext _context;
+        public HomeController(ApplicationDbContext context)
+        {
+            _context = context;
+        }
 
-        //add db context
         public IActionResult Index()
         {
             return View();
@@ -40,12 +48,33 @@ namespace SoftwareStore.Controllers
         }
 
 
-        //TODO: Complete show product
-        public IActionResult ShowProduct(Product product)
+        //add routing logic
+        [HttpGet]
+        public IActionResult ShowProduct(string productName)
         {
 
-            //product linq lookup here.
-            return View(product);
+            var product = _context.Softwares
+                .Where(p => p.ProductName == productName)
+                .FirstOrDefault();
+
+            if (product is Software)
+            {
+                var productViewModel = Conversion.ConvertToViewModel((Software)product);
+
+                return View(productViewModel);
+            }
+            else
+            {
+                Conversion.ConvertToViewModel(product);
+                return View("Index");
+            }
+           
+        }
+
+        [HttpPost]
+        public IActionResult ShowProduct(IProduct product)
+        {
+            return View("Cart", product);
         }
         public IActionResult Products()
         {

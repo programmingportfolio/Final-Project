@@ -8,8 +8,8 @@ namespace SoftwareStore.Models.ViewModels.Concrete
 {
     public class SoftwareViewModel : ProductViewModel
     {
-        bool isDownload;
-        bool isSubscription;
-        bool isDownSub;
+        public bool isDownload;
+        public bool isSubscription;
+        public bool isDownSub;
     }
 }
