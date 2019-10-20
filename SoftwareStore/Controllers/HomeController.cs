@@ -50,7 +50,7 @@ namespace SoftwareStore.Controllers
 
         //add routing logic
         [HttpGet]
-        public IActionResult ShowProduct(string productName)
+        public IActionResult Product(string productName)
         {
 
             var product = _context.Softwares
@@ -72,7 +72,7 @@ namespace SoftwareStore.Controllers
         }
 
         [HttpPost]
-        public IActionResult ShowProduct(IProduct product)
+        public IActionResult Product(IProduct product)
         {
             return View("Cart", product);
         }

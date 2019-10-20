@@ -1,4 +1,4 @@
-﻿
+﻿@model SoftwareStore.Models.ViewModels.Concrete.SoftwareViewModel
 @{
     ViewData["Title"] = "Product";
 }
@@ -339,12 +339,12 @@
                         <li class="breadcrumb-item"><a href="/category.html">Tops and Jackets</a></li>
                         <li class="breadcrumb-item active">Modern Jacket    </li>
                     </ul>
-                    <h1 class="mb-4">Modern Jacket</h1>
+                    <h1 class="mb-4">@Model.ProductName</h1>
                     <div class="d-flex flex-column flex-sm-row align-items-sm-center justify-content-sm-between mb-4">
                         <ul class="list-inline mb-2 mb-sm-0">
-                            <li class="list-inline-item h4 font-weight-light mb-0">$65.00</li>
+                            <li class="list-inline-item h4 font-weight-light mb-0">@($"${Model.Price}")</li>
                             <li class="list-inline-item text-muted font-weight-light">
-                                <del>$90.00</del>
+                                <del>$125.00</del>
                             </li>
                         </ul>
                         <div class="d-flex align-items-center">
@@ -357,7 +357,7 @@
                             </ul><span class="text-muted text-uppercase text-sm">25 reviews</span>
                         </div>
                     </div>
-                    <p class="mb-4 text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p>
+                    <p class="mb-4 text-muted">@Model.ShortDescription</p>
                     <form action="#">
                         <div class="row">
                             <div class="col-sm-6 col-lg-12 detail-option mb-3">
@@ -437,9 +437,8 @@
             </ul>
             <div class="tab-content py-4">
                 <div id="description" role="tabpanel" class="tab-pane active px-3">
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. LOLUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. LOLDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. LOLUt enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. LOLDuis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                </div>
+                    <p class="text-muted">@Model.LongDescription</p>
+                        </div>
                 <div id="additional-information" role="tabpanel" class="tab-pane">
                     <div class="row">
                         <div class="col-lg-6">

@@ -25,7 +25,7 @@ namespace SoftwareStore.Models
                                 UserName         = "Username",
                                 ProductName      = "Product Name",
                                 ProductCategory  = "Product Category",
-                                ShortDescription = "Product Description",
+                                ShortDescription = "Short Description",
                                 LongDescription  = "Long Description",
                                 Price            = 100.00,
                                 Quantity         = 1,

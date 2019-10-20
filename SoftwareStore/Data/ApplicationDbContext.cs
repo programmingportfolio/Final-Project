@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -22,10 +23,16 @@ namespace SoftwareStore.Data
         public bool isDownload;
         public bool isSubscription;
         public bool isDownSub;
+
+        // change to list tuple of username and datetime
         public string UserName { get; set; }
+
+        [Key]
         public string ProductName { get; set; }
         public string ProductCategory { get; set; }
         public string ShortDescription { get; set; }
+
+        // allow interactive content support with size limitations
         public string LongDescription { get; set; }
         public double Price { get; set; }
         public int Quantity { get; set; }
