@@ -9,4 +9,4 @@ https://softwarestoreapp.azurewebsites.net
 
 > ASP.NET Core 2.2 Application with identity services, Entity Framework Core, SQL database relationships, view models, infrastructure logic folders, controllers, models, and views. Currently this is a completed project with stretch goals.
 
->> ![Code View](/Code View.png)
+>> ![Code View](Code View.PNG)
