@@ -1,6 +1,0 @@
-1. Complete ui navbar navigation and change font for about page
-2. Create viewmodel pagination
-3. Create page views based on product information from database
-4. Complete identity custom db set for integrating relationships with products
-5. Copy paste new product page
-6. Setup url api routing on controllers
