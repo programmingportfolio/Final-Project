@@ -79,13 +79,13 @@
                 </div>
                 <!-- Cart Dropdown-->
                 <div class="nav-item dropdown">
-                    <a href="/cart.html" class="navbar-icon-link d-lg-none">
+                    <a asp-controller="Account" asp-action="Cart" class="navbar-icon-link d-lg-none">
                         <div class="nav-item navbar-icon-link text-gray-700 nav-link">View Cart
                             </div>
                     </a>
 
                     <div class="d-none d-lg-block">
-                        <a id="cartdetails" href="/cart.html" data-target="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="navbar-icon-link dropdown-toggle">
+                        <a id="cartdetails" asp-controller="Account" asp-action="Cart" data-target="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="navbar-icon-link dropdown-toggle">
                             <div class="nav-item navbar-icon-link text-gray-700 nav-link">View Cart
                                 
                             </div>
