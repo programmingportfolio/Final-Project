@@ -1,0 +1,5 @@
+
+2. Create viewmodel pagination
+4. Complete identity custom db set for integrating relationships with products
+5. Copy paste new product page
+6. Setup url api routing on controllers
