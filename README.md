@@ -1,4 +1,2 @@
-# Final-Project
-
-# Currently Live View 
+# Live View 
 https://softwarestoreapp.azurewebsites.net
