@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Azure.Services.AppAuthentication;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -18,7 +19,7 @@ namespace SoftwareStore
         public static void Main(string[] args)
         {
             var host = CreateWebHostBuilder(args).Build();
-
+            var accessToken = (new AzureServiceTokenProvider()).GetAccessTokenAsync("https://database.windows.net").Result;
             using (var scope = host.Services.CreateScope())
             {
                 var services = scope.ServiceProvider;
