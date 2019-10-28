@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using SoftwareStore.Models.Concrete.Identity;
 using TimeTracker.ViewModels;
 
 namespace TimeTracker.Controllers
@@ -12,10 +13,10 @@ namespace TimeTracker.Controllers
     [Authorize(Roles = "admin")]//[Authorize]
     public class UsersController : Controller
     {
-        UserManager<IdentityUser> _userManager;
+        UserManager<ApplicationUser> _userManager;
 
 
-        public UsersController(UserManager<IdentityUser> userManager)
+        public UsersController(UserManager<ApplicationUser> userManager)
         {
             _userManager = userManager;
         }

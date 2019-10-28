@@ -5,11 +5,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using SoftwareStore.Data;
+using SoftwareStore.Infrastructure;
 using SoftwareStore.Models;
+using SoftwareStore.Models.Concrete.Identity;
 
 namespace SoftwareStore
 {
@@ -25,7 +28,9 @@ namespace SoftwareStore
                 try
                 {
                     var context = services.GetRequiredService<ApplicationDbContext>();
-                    SeedData.EnsurePopulated(context);
+                    var userManager = services.GetRequiredService<IdentityUserContext<ApplicationUser>>();
+                   
+                    SeedData.EnsurePopulated(context, userManager);
                 }
                 catch (Exception ex)
                 {

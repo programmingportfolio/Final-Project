@@ -3,13 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using SoftwareStore.Data;
 using SoftwareStore.Models.Abstract;
+using SoftwareStore.Models.Concrete.Identity;
+using SoftwareStore.Models.ViewModels.Concrete;
 
 namespace SoftwareStore.Controllers
 {
     public class ManagerController : Controller
     {
+        
         // GET: Manager
         public ActionResult Index()
         {
@@ -90,6 +95,42 @@ namespace SoftwareStore.Controllers
             {
                 return View();
             }
+        }
+
+        [HttpGet]
+        public IActionResult CreateProduct(int UserId)
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult CreateProduct(Software s)
+        {
+            var software = new Software
+            {
+                isSubscription = s.isSubscription,
+                isDownload = s.isDownload,
+                isDownSub = s.isDownSub,
+                UserName = s.UserName,
+                ProductName = s.ProductName,
+                ProductCategory = s.ProductCategory,
+                ShortDescription = s.ShortDescription,
+                LongDescription = s.LongDescription,
+                Price = s.Price,
+                Quantity = s.Quantity,
+                EasyUrl = s.EasyUrl,
+                VideoUrl = s.VideoUrl,
+                PictureUrl1 = s.PictureUrl1,
+                PictureUrl2 = s.PictureUrl2,
+                PictureUrl3 = s.PictureUrl3,
+                PictureUrl4 = s.PictureUrl4,
+                PictureUrl5 = s.PictureUrl5,
+                PictureUrl6 = s.PictureUrl6,
+                PictureUrl7 = s.PictureUrl7,
+                PictureUrl8 = s.PictureUrl8,
+            };
+
+            return View("Manager/Index");
         }
     }
 }

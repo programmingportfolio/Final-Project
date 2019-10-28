@@ -5,11 +5,12 @@ using System.Text;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using SoftwareStore.Models.Abstract;
+using SoftwareStore.Models.Concrete.Identity;
 using SoftwareStore.Models.Products;
 
 namespace SoftwareStore.Data
 {
-    public class ApplicationDbContext : IdentityDbContext
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)

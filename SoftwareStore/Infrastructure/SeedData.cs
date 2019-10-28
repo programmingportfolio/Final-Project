@@ -1,4 +1,6 @@
-﻿using SoftwareStore.Data;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using SoftwareStore.Data;
+using SoftwareStore.Models.Concrete.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +10,7 @@ namespace SoftwareStore.Models
 {
     public class SeedData
     {
-        public static void EnsurePopulated(ApplicationDbContext context)
+        public static void EnsurePopulated(ApplicationDbContext context, IdentityUserContext<ApplicationUser> userManager)
         {
             //context.Database.EnsureDeleted();
             context.Database.EnsureCreated();
@@ -45,11 +47,11 @@ namespace SoftwareStore.Models
 
             // Look for existing matches
 
-            var diff = from software in newSoftware
+            var softwareDiff = from software in newSoftware
                        where !existingSoftware.Any(s => s.EasyUrl == software.EasyUrl)
                        select software;
 
-           List<Software> diffList = diff.Select(s => new Software {
+           List<Software> softwareDiffList = softwareDiff.Select(s => new Software {
 
                isSubscription = s.isSubscription,
                isDownload = s.isDownload,
@@ -74,9 +76,37 @@ namespace SoftwareStore.Models
 
            }).ToList();
 
-            foreach (Software software in diffList)
+            foreach (Software software in softwareDiffList)
             {
                 context.Softwares.Add(software);
+            }
+
+            //var existingSoftware = context.Softwares.ToList();
+
+            var founders = new ApplicationUser[]
+           {
+               new ApplicationUser
+               {
+                   
+                                }
+           };
+
+
+            // Look for existing matches
+
+            var founderDiff = from software in newSoftware
+                       where !existingSoftware.Any(s => s.EasyUrl == software.EasyUrl)
+                       select software;
+
+            List<ApplicationUser> founderDiffList = founderDiff.Select(s => new ApplicationUser
+            {
+
+
+            }).ToList();
+
+            foreach (ApplicationUser user in founderDiffList)
+            {
+                userManager.Add(user);
             }
 
             context.SaveChanges();
