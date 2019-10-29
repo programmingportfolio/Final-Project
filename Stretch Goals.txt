@@ -1,5 +1,5 @@
-
-2. Create viewmodel pagination
-4. Complete identity custom db set for integrating relationships with products
-5. Copy paste new product page
-6. Setup url api routing on controllers
+1. Create viewmodel pagination
+2. Setup blog storage and link urls as pages are created
+3. Assign admin roles hardcoded by disabling scope checking
+4. Setup paypal
+5. Visual feedback for login

@@ -54,7 +54,7 @@ namespace TimeTracker.Controllers
             {
                 return NotFound();
             }
-            EditUserViewModel model = new EditUserViewModel { Id = user.Id, Email = user.Email, Phone = user.PhoneNumber };
+            EditUserViewModel model = new EditUserViewModel { /*Id = user.Id,*/ Email = user.Email, Phone = user.PhoneNumber };
             return View(model);
         }
 
@@ -105,7 +105,7 @@ namespace TimeTracker.Controllers
             {
                 return NotFound();
             }
-            ChangePasswordViewModel model = new ChangePasswordViewModel { Id = user.Id, Email = user.Email };
+            ChangePasswordViewModel model = new ChangePasswordViewModel { /*Id = user.Id,*/ Email = user.Email };
             return View(model);
         }
 

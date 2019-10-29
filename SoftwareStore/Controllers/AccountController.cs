@@ -1,14 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using SoftwareStore.Models.Concrete.Identity;
 
 namespace SoftwareStore.Controllers
 {
     public class AccountController : Controller
     {
+        UserManager<ApplicationUser> _userManager;
+        public AccountController(UserManager<ApplicationUser> userManager)
+        {
+            _userManager = userManager;
+        }
         public IActionResult Checkout1()
         {
             return View();
@@ -37,6 +41,17 @@ namespace SoftwareStore.Controllers
         public IActionResult Orders()
         {
             return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> CreateDefaultUser(ApplicationUser user)
+        {
+            if (true)
+            {
+                //if (!await UserManager.IsInRoleAsync(user.Id, "Member"))
+                await _userManager.AddToRoleAsync(user, "Member");
+
+                return View("Index");
+            }
         }
     }
 }

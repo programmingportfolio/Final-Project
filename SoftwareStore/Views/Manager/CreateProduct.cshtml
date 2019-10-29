@@ -1,0 +1,110 @@
+﻿@model SoftwareStore.Models.Concrete.Products.Software
+
+@{
+    ViewData["Title"] = "CreateProduct";
+}
+
+<h1>CreateProduct</h1>
+
+<h4>Software</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateProduct">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="UserName" class="control-label"></label>
+                <input asp-for="UserName" class="form-control" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductCategory" class="control-label"></label>
+                <input asp-for="ProductCategory" class="form-control" />
+                <span asp-validation-for="ProductCategory" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ShortDescription" class="control-label"></label>
+                <input asp-for="ShortDescription" class="form-control" />
+                <span asp-validation-for="ShortDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LongDescription" class="control-label"></label>
+                <input asp-for="LongDescription" class="form-control" />
+                <span asp-validation-for="LongDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Quantity" class="control-label"></label>
+                <input asp-for="Quantity" class="form-control" />
+                <span asp-validation-for="Quantity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EasyUrl" class="control-label"></label>
+                <input asp-for="EasyUrl" class="form-control" />
+                <span asp-validation-for="EasyUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VideoUrl" class="control-label"></label>
+                <input asp-for="VideoUrl" class="form-control" />
+                <span asp-validation-for="VideoUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PictureUrl1" class="control-label"></label>
+                <input asp-for="PictureUrl1" class="form-control" />
+                <span asp-validation-for="PictureUrl1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PictureUrl2" class="control-label"></label>
+                <input asp-for="PictureUrl2" class="form-control" />
+                <span asp-validation-for="PictureUrl2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PictureUrl3" class="control-label"></label>
+                <input asp-for="PictureUrl3" class="form-control" />
+                <span asp-validation-for="PictureUrl3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PictureUrl4" class="control-label"></label>
+                <input asp-for="PictureUrl4" class="form-control" />
+                <span asp-validation-for="PictureUrl4" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PictureUrl5" class="control-label"></label>
+                <input asp-for="PictureUrl5" class="form-control" />
+                <span asp-validation-for="PictureUrl5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PictureUrl6" class="control-label"></label>
+                <input asp-for="PictureUrl6" class="form-control" />
+                <span asp-validation-for="PictureUrl6" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PictureUrl7" class="control-label"></label>
+                <input asp-for="PictureUrl7" class="form-control" />
+                <span asp-validation-for="PictureUrl7" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PictureUrl8" class="control-label"></label>
+                <input asp-for="PictureUrl8" class="form-control" />
+                <span asp-validation-for="PictureUrl8" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ApplicationUserId" class="control-label"></label>
+                <input asp-for="ApplicationUserId" class="form-control" />
+                <span asp-validation-for="ApplicationUserId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

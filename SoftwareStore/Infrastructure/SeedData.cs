@@ -1,6 +1,9 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using SoftwareStore.Data;
 using SoftwareStore.Models.Concrete.Identity;
+using SoftwareStore.Models.Concrete.Products;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +13,7 @@ namespace SoftwareStore.Models
 {
     public class SeedData
     {
-        public static void EnsurePopulated(ApplicationDbContext context, IdentityUserContext<ApplicationUser> userManager)
+        public static void EnsurePopulated(ApplicationDbContext context, UserManager<ApplicationUser> userManager)
         {
             //context.Database.EnsureDeleted();
             context.Database.EnsureCreated();
@@ -85,7 +88,6 @@ namespace SoftwareStore.Models
 
             var founder = new ApplicationUser
             {
-                Email = "luke@luke.com",
 
             };
 
@@ -104,7 +106,7 @@ namespace SoftwareStore.Models
 
             foreach (ApplicationUser user in founderDiffList)
             {
-                userManager.Add(user);
+               // userManager.Add(user);
             }
 
             context.SaveChanges();

@@ -42,11 +42,14 @@ namespace SoftwareStore.Migrations
                     LockoutEnabled = table.Column<bool>(nullable: false),
                     AccessFailedCount = table.Column<int>(nullable: false),
                     UserId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    IdentityId = table.Column<string>(nullable: true),
+                    RoleId = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                    table.UniqueConstraint("AK_AspNetUsers_UserId", x => x.UserId);
                 });
 
             migrationBuilder.CreateTable(
@@ -69,7 +72,8 @@ namespace SoftwareStore.Migrations
                     PictureUrl5 = table.Column<string>(nullable: true),
                     PictureUrl6 = table.Column<string>(nullable: true),
                     PictureUrl7 = table.Column<string>(nullable: true),
-                    PictureUrl8 = table.Column<string>(nullable: true)
+                    PictureUrl8 = table.Column<string>(nullable: true),
+                    ApplicationUserId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {

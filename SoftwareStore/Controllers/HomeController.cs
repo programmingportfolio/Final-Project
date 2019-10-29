@@ -8,6 +8,7 @@ using SoftwareStore.Data;
 using SoftwareStore.Infrastructure;
 using SoftwareStore.Models;
 using SoftwareStore.Models.Abstract;
+using SoftwareStore.Models.Concrete.Products;
 using SoftwareStore.Models.ViewModels;
 using SoftwareStore.Models.ViewModels.Abstract;
 using SoftwareStore.Models.ViewModels.Concrete;
@@ -24,6 +25,7 @@ namespace SoftwareStore.Controllers
 
         public IActionResult Index()
         {
+            //var user = User.Identity.Name;
             return View();
         }
 

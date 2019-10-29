@@ -5,8 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using SoftwareStore.Data;
@@ -20,6 +19,7 @@ namespace SoftwareStore
     {
         public static void Main(string[] args)
         {
+            //disable scope checking
             var host = CreateWebHostBuilder(args).Build();
             //var accessToken = (new AzureServiceTokenProvider()).GetAccessTokenAsync("https://database.windows.net").Result;
             using (var scope = host.Services.CreateScope())
@@ -28,7 +28,7 @@ namespace SoftwareStore
                 try
                 {
                     var context = services.GetRequiredService<ApplicationDbContext>();
-                    var userManager = services.GetRequiredService<IdentityUserContext<ApplicationUser>>();
+                    var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
                    
                     SeedData.EnsurePopulated(context, userManager);
                 }

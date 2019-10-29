@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using SoftwareStore.Data;
 using SoftwareStore.Models.Abstract;
 using SoftwareStore.Models.Concrete.Identity;
+using SoftwareStore.Models.Concrete.Products;
 using SoftwareStore.Models.ViewModels.Concrete;
 
 namespace SoftwareStore.Controllers
@@ -98,7 +99,7 @@ namespace SoftwareStore.Controllers
         }
 
         [HttpGet]
-        public IActionResult CreateProduct(int UserId)
+        public IActionResult CreateProduct(/*int UserId*/)
         {
             return View();
         }
@@ -130,7 +131,7 @@ namespace SoftwareStore.Controllers
                 PictureUrl8 = s.PictureUrl8,
             };
 
-            return View("Manager/Index");
+            return RedirectToAction("Index", "Home");
         }
     }
 }
