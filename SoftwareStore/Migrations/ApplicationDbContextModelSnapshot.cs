@@ -210,6 +210,10 @@ namespace SoftwareStore.Migrations
 
                     b.Property<bool>("TwoFactorEnabled");
 
+                    b.Property<int>("UserId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
                     b.Property<string>("UserName")
                         .HasMaxLength(256);
 

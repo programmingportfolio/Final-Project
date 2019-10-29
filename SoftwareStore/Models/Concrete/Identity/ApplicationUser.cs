@@ -10,6 +10,6 @@ namespace SoftwareStore.Models.Concrete.Identity
     public class ApplicationUser : IdentityUser
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        int UserId { get; set; }
+        public int UserId { get; set; }
     }
 }

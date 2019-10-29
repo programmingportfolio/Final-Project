@@ -26,5 +26,6 @@ namespace SoftwareStore.Models.Abstract
         public string PictureUrl6 { get; set; }
         public string PictureUrl7 { get; set; }
         public string PictureUrl8 { get; set; }
+        public int ApplicationUserId { get; set; }
     }
 }

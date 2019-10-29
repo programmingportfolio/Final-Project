@@ -83,13 +83,11 @@ namespace SoftwareStore.Models
 
             //var existingSoftware = context.Softwares.ToList();
 
-            var founders = new ApplicationUser[]
-           {
-               new ApplicationUser
-               {
-                   
-                                }
-           };
+            var founder = new ApplicationUser
+            {
+                Email = "luke@luke.com",
+
+            };
 
 
             // Look for existing matches

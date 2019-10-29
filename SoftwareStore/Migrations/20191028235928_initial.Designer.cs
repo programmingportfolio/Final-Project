@@ -10,8 +10,8 @@ using SoftwareStore.Data;
 namespace SoftwareStore.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20191028154451_IdentityAdd")]
-    partial class IdentityAdd
+    [Migration("20191028235928_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -211,6 +211,10 @@ namespace SoftwareStore.Migrations
                     b.Property<string>("SecurityStamp");
 
                     b.Property<bool>("TwoFactorEnabled");
+
+                    b.Property<int>("UserId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("UserName")
                         .HasMaxLength(256);

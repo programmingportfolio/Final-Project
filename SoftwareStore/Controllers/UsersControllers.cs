@@ -30,7 +30,7 @@ namespace TimeTracker.Controllers
         {
             if (ModelState.IsValid)
             {
-                IdentityUser user = new IdentityUser { Email = model.Email, UserName = model.Email, PhoneNumber = model.Phone };
+                ApplicationUser user = new ApplicationUser { Email = model.Email, UserName = model.Email, PhoneNumber = model.Phone };
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -49,7 +49,7 @@ namespace TimeTracker.Controllers
 
         public async Task<IActionResult> Edit(string id)
         {
-            IdentityUser user = await _userManager.FindByIdAsync(id);
+            ApplicationUser user = await _userManager.FindByIdAsync(id);
             if (user == null)
             {
                 return NotFound();
@@ -63,7 +63,7 @@ namespace TimeTracker.Controllers
         {
             if (ModelState.IsValid)
             {
-                IdentityUser user = await _userManager.FindByIdAsync(model.Id);
+                ApplicationUser user = await _userManager.FindByIdAsync(model.Id);
                 if (user != null)
                 {
                     user.Email = model.Email;
@@ -90,7 +90,7 @@ namespace TimeTracker.Controllers
         [HttpPost]
         public async Task<ActionResult> Delete(string id)
         {
-            IdentityUser user = await _userManager.FindByIdAsync(id);
+            ApplicationUser user = await _userManager.FindByIdAsync(id);
             if (user != null)
             {
                 IdentityResult result = await _userManager.DeleteAsync(user);
@@ -100,7 +100,7 @@ namespace TimeTracker.Controllers
 
         public async Task<IActionResult> ChangePassword(string id)
         {
-            IdentityUser user = await _userManager.FindByIdAsync(id);
+            ApplicationUser user = await _userManager.FindByIdAsync(id);
             if (user == null)
             {
                 return NotFound();
@@ -114,13 +114,13 @@ namespace TimeTracker.Controllers
         {
             if (ModelState.IsValid)
             {
-                IdentityUser user = await _userManager.FindByIdAsync(model.Id);
+                ApplicationUser user = await _userManager.FindByIdAsync(model.Id);
                 if (user != null)
                 {
                     var _passwordValidator =
-                        HttpContext.RequestServices.GetService(typeof(IPasswordValidator<IdentityUser>)) as IPasswordValidator<IdentityUser>;
+                        HttpContext.RequestServices.GetService(typeof(IPasswordValidator<ApplicationUser>)) as IPasswordValidator<ApplicationUser>;
                     var _passwordHasher =
-                        HttpContext.RequestServices.GetService(typeof(IPasswordHasher<IdentityUser>)) as IPasswordHasher<IdentityUser>;
+                        HttpContext.RequestServices.GetService(typeof(IPasswordHasher<ApplicationUser>)) as IPasswordHasher<ApplicationUser>;
 
                     IdentityResult result =
                         await _passwordValidator.ValidateAsync(_userManager, user, model.NewPassword);
