@@ -11,57 +11,31 @@
         <!-- Navbar Collapse -->
         <div id="navbarCollapse" class="collapse navbar-collapse">
             <ul class="navbar-nav mx-auto">
+
                 <li class="nav-item">
                     <a class="nav-link text-gray-700" asp-controller="Home" asp-action="Index">Home</a>
-
                 </li>
+
                 <li class="nav-item">
                     <a class="nav-link text-gray-700" asp-controller="Home" asp-action="Category">Categories</a>
 
                 </li>
-                <!-- Megamenu-->
+
                 <li class="nav-item position-static">
                     <a class="nav-link text-gray-700" asp-controller="Home" asp-action="Product" asp-route-productName="Product Name">Spotlight</a>
 
                 </li>
-                <!-- /Megamenu end-->
-                <!-- Multi level dropdown    -->
-                <li class="nav-item">
-                    <a class="nav-link text-gray-700" asp-controller="Home" asp-action="Products">Products</a>
 
-                    <ul aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu">
-                        <li><a href="/#" class="dropdown-item">Action</a></li>
-                        <li><a href="/#" class="dropdown-item">Another action</a></li>
-                        <li class="dropdown-submenu">
-                            <a id="navbarDropdownMenuLink2" href="/#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item">Dropdown link<i class="fa fa-angle-down ml-2"></i></a>
-                            <ul aria-labelledby="navbarDropdownMenuLink2" class="dropdown-menu">
-                                <li><a href="/#" class="dropdown-item">Action</a></li>
-                                <li class="dropdown-submenu">
-                                    <a id="navbarDropdownMenuLink3" href="/#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item">
-
-                                        Another action<i class="fa fa-angle-down ml-2"></i>
-                                    </a>
-                                    <ul aria-labelledby="navbarDropdownMenuLink3" class="dropdown-menu">
-                                        <li><a href="/#" class="dropdown-item">Action</a></li>
-                                        <li><a href="/#" class="dropdown-item">Action</a></li>
-                                        <li><a href="/#" class="dropdown-item">Action</a></li>
-                                        <li><a href="/#" class="dropdown-item">Action</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="/#" class="dropdown-item">Something else here</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <!-- Multi level dropdown end-->
                 <li class="nav-item">
                     <a class="nav-link text-gray-700" asp-controller="Home" asp-action="About">About</a>
 
                 </li>
+
                 <li class="nav-item">
                     <a class="nav-link text-gray-700" asp-controller="Home" asp-action="Contact">Contact</a>
 
                 </li>
+
             </ul>
             <div class="d-flex align-items-center justify-content-between justify-content-lg-end mt-1 mb-2 my-lg-0">
                 <!-- Search Button
@@ -136,6 +110,7 @@
         </div>
     </div>
 </nav>
+
 <!-- /Navbar -->
 <!-- Fullscreen search area
 <div class="search-area-wrapper">

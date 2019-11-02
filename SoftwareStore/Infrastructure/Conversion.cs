@@ -1,10 +1,6 @@
-﻿using SoftwareStore.Data;
-using SoftwareStore.Models.Abstract;
-using SoftwareStore.Models.Concrete.Products;
+﻿using SoftwareStore.Models.Concrete.Products;
 using SoftwareStore.Models.ViewModels.Concrete;
 using System;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace SoftwareStore.Infrastructure
 {

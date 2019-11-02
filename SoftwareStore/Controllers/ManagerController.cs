@@ -1,15 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using SoftwareStore.Data;
 using SoftwareStore.Models.Abstract;
-using SoftwareStore.Models.Concrete.Identity;
 using SoftwareStore.Models.Concrete.Products;
-using SoftwareStore.Models.ViewModels.Concrete;
 
 namespace SoftwareStore.Controllers
 {
