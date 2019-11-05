@@ -1,5 +1,5 @@
 1. Create viewmodel pagination
-2. Setup blog storage and link urls as pages are created
+2. Setup blob storage and link urls as pages are created
 3. Assign admin roles hardcoded by disabling scope checking
 4. Setup paypal
 5. Visual feedback for login
